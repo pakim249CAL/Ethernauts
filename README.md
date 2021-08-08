@@ -13,6 +13,7 @@ Tips:
 * 
 
 Solutions:
+
 0. Tutorial level (Used web console)
 1. Simply send some ether via contribute and then send ether to the contract directly to win. (Used web console)
 2. The constructor name is slightly different from the contract name. You can simply call this misnamed function to win. (Used web console)
