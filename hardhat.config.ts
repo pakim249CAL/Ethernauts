@@ -1,6 +1,12 @@
-require("@nomiclabs/hardhat-waffle");
-require("@nomiclabs/hardhat-truffle5");
+import "@nomiclabs/hardhat-waffle";
+import "@nomiclabs/hardhat-truffle5";
 require('dotenv').config();
+
+import {task} from "hardhat/config";
+
+const GWEI = 1000 * 1000 * 1000;
+
+
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
@@ -18,12 +24,13 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
-module.exports = {
+export default {
   defaultNetwork: "rinkeby",
   networks: {
     rinkeby: {
       url: "https://eth-rinkeby.alchemyapi.io/v2/6adOn8fQFLYEk7XrpUHgQ2gaBGiB3Sv7",
-      accounts: [process.env.PRIVATE_KEY]
+      accounts: [process.env.PRIVATE_KEY],
+      gas: 6500000,
     }
   },
   solidity:  {
